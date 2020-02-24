@@ -1,7 +1,7 @@
 import json
 from ebaysdk.finding import Connection as finding # install with pip
 from bs4 import BeautifulSoup # install with pip
-from ebayapi import ebayapi # I have saved into another file to protect my key
+from ebayapi import ebayapi # My API key
 
 Keywords = input('Enter your keyword/s eg: white piano:''\n')
 api = finding(appid = ebayapi, siteid='EBAY-GB', config_file=None) # change country with 'siteid='
@@ -13,9 +13,6 @@ soup = BeautifulSoup(response.content, 'lxml')
 totalentries = int(soup.find('totalentries').text)
 items = soup.find_all('item')
 
-print()
-print()
-
 def res_print():
     for item in items:
         cat = item.categoryname.string.lower()
@@ -24,7 +21,6 @@ def res_print():
         url = item.viewitemurl.string.lower()
         seller = item.sellerusername.text.lower()
         listingtype = item.listingtype.string.lower()
-        
 
         print(cat)
         print("\n")
@@ -67,11 +63,3 @@ def res_json():
 
 res_print()
 res_text()
-            
-
-        
-
-
-    
-    
-
