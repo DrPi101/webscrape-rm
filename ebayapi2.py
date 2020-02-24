@@ -3,21 +3,18 @@ from ebaysdk.finding import Connection as finding # install with pip
 from bs4 import BeautifulSoup # install with pip
 from ebayapi import ebayapi # My API key
 
-f = open ("ebay_search.txt", "r")
-lines = f.readlines()
-#print(lines)
-Keywords = lines
-print(Keywords)
-#exit()
-#Keywords = input('Enter your keyword/s eg: white piano:''\n')
-#Keywords = ["Autocourse 1971","Autocourse 1968", "Autocourse 1969"]
+
+def get_kw():
+	f = open ("ebay_search.txt", "r")
+	lines = f.readlines()
+	Keywords = lines
+	return Keywords
 
 def get_items(Keywords):
 	api = finding(appid = ebayapi, siteid='EBAY-GB', config_file=None) # change country with 'siteid='
 	api_request = { 'keywords': Keywords, 'outputSelector' : 'SellerInfo'}
 	response = api.execute('findItemsByKeywords', api_request)
 	soup = BeautifulSoup(response.content, 'lxml')
-	totalentries = int(soup.find('totalentries').text)
 	items = soup.find_all('item')
 	return items
 
@@ -53,7 +50,6 @@ def res_text(items):
             url = item.viewitemurl.string.lower()
             seller = item.sellerusername.text.lower()
             title = item.title.string.lower().strip()
-            #condition = item.conditiondisplayname.string.lower()
             f.write(title)
             f.write(" £")
             f.write(str(price))
@@ -61,7 +57,6 @@ def res_text(items):
             f.write(" ")
             f.write(seller)
             f.write(" ")
-            #f.write(condition)
             f.write("*" * 20)
             f.write("\n")
 
@@ -70,6 +65,10 @@ def res_json():
     pass
 
 # main #
+
+
+Keywords = get_kw()
+
 for i in range(len(Keywords)):
 	x = get_items(Keywords[i])
 	res_print(x)
