@@ -1,1 +1,0 @@
-ebayapi = 'YOUR API'
