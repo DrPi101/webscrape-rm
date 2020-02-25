@@ -39,7 +39,7 @@ def res_print(items):
         print("*" * 20)
 
 
-ebay_results = 'ebay_results.txt' # Next : Write it to JSON
+ebay_results = 'ebay_results.json' 
 
 def res_text(items):
     with open(ebay_results, "a") as f:
@@ -61,15 +61,39 @@ def res_text(items):
             f.write("\n")
 
 
-def res_json():
-    pass
+def res_json(items):
+    tdat = {}
+    idat = {}
+    with open(ebay_results, "a") as json_file:
+        for item in items:
+            idat["cat"] = item.categoryname.string.lower()
+            idat["title"] = item.title.string.lower().strip()
+            idat["price"] = int(round(float(item.currentprice.string)))
+            idat["url"] = item.viewitemurl.string.lower()
+            idat["seller"] = item.sellerusername.text.lower()
+            idat["title"] = item.title.string.lower().strip()
 
-# main #
+            tdat.update(idat)
+         
+            json.dump(tdat, json_file)
+            json_file.write('\n')
+    
+def read_json():
+    with open(ebay_results) as json_file:
+        data = json_file.read()
+    print(data)
 
+####################### main ##########################
 
-Keywords = get_kw()
+Keywords = get_kw() # text file in same dir - one search term per line
 
 for i in range(len(Keywords)):
 	x = get_items(Keywords[i])
-	res_print(x)
-	res_text(x)
+	res_json(x)
+
+read_json() # appends at moment, may make new one, with date/time in filename.
+
+
+
+
+
