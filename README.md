@@ -3,7 +3,7 @@ I realised that I used https://github.com/DrPi101/webscrape-rm/blob/master/ebaya
 
 # https://youtu.be/iJy1U9Xik2w
 
-
+![Screenshot](maxresdefault.jpg)
 
 1. Create a file called ebayapi.py (make sure it is in same directory as your python code)
 
