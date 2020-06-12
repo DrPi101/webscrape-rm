@@ -16,7 +16,7 @@ full line reads :
 
 api = finding(appid = ebayapi, siteid='EBAY-GB', config_file=None) # change country with 'siteid='
 
-See my working code on GitHub : 
+See my working code on GitHub : <br>
 https://github.com/DrPi101/webscrape-rm/blob/master/ebayapitest.py <br>
 https://github.com/DrPi101/webscrape-rm/blob/master/ebay_search.txt <br>
 (the txt file is the list of things to search for that the Python code reads).
