@@ -1,7 +1,7 @@
 # ebayapi2.py is the latest version that uses eBay API to get results based on entries in ebay_search.txt file
-# I realised that I used https://github.com/DrPi101/webscrape-rm/blob/master/ebayapitest.py in the video on YouTube
+I realised that I used https://github.com/DrPi101/webscrape-rm/blob/master/ebayapitest.py in the video on YouTube
 
-https://youtu.be/iJy1U9Xik2w
+# https://youtu.be/iJy1U9Xik2w
 
 1. Create a file called ebayapi.py (make sure it is in same directory as your python code)
 
