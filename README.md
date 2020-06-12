@@ -11,14 +11,14 @@ I realised that I used https://github.com/DrPi101/webscrape-rm/blob/master/ebaya
 ebayapi = 'mrBlobby-ebpyt-PRD-dcaa423c9-9a37ab99'
 where mrBlobby is the usename (I haven't put my own personal one here for obvious reasons).
 
-3. With that file saved, you can then use "ebayapi"  on line 14 - eg.  appid = ebayapi
+3. With that file saved, you can then use "ebayapi"  on line 14 - eg.  appid = ebayapi <br>
 full line reads : 
 
 api = finding(appid = ebayapi, siteid='EBAY-GB', config_file=None) # change country with 'siteid='
 
 See my working code on GitHub : 
-https://github.com/DrPi101/webscrape-rm/blob/master/ebayapitest.py
-https://github.com/DrPi101/webscrape-rm/blob/master/ebay_search.txt 
+https://github.com/DrPi101/webscrape-rm/blob/master/ebayapitest.py <br>
+https://github.com/DrPi101/webscrape-rm/blob/master/ebay_search.txt <br>
 (the txt file is the list of things to search for that the Python code reads).
 
 4. Note I am using the PRD production key that gets data from the 'Live' eBay site.
