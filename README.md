@@ -10,7 +10,7 @@ ebayapi = 'mrBlobby-ebpyt-PRD-dcaa423c9-9a37ab99'
 where mrBlobby is the usename (I haven't put my own personal one here for obvious reasons).
 
 3. With that file saved, you can then use "ebayapi"  on line 14 - eg.  appid = ebayapi
-full line reads :
+full line reads : \n
 api = finding(appid = ebayapi, siteid='EBAY-GB', config_file=None) # change country with 'siteid='
 
 See my working code on GitHub : 
